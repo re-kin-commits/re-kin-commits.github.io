@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     var captures = 0;
-    var captured = 0
 
     async function camera() {
         try {
@@ -13,15 +11,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function capture() {
+
+        if (capture == 0) {
+            console.log(captures)
         const video = document.getElementById("video");
         const canvas = document.getElementById("canvas");
         const context = canvas.getContext("2d");
 
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-        context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
+        if (!video || video.videoWidth === 0) {
+            console.error("Video stream not ready");
+            return;
+        }
+        canvas.width = video.videoWidth * 0.23;
+        canvas.height = video.videoHeight * 0.24;
+        ctx.drawImage(video, 85, 11, canvas.width , canvas.height);
         captures++;
+
+        } else if (captures == 1) {
+            
+        }
+
     }
 
     function timer(seconds) {
@@ -38,22 +47,25 @@ document.addEventListener("DOMContentLoaded", function () {
         timer(3);
     }
 
+    // Expose start function globally so it can be used in HTML
+    window.start = start;
+
     camera();
 
-
-
-    const canvasResult = document.getElementById("gallery");
-    const ctx = canvasResult.getContext("2d");
-
+    const canvas = document.getElementById("resultCanvas");
+    const ctx = canvas.getContext("2d");
     const img = new Image();
-    img.src = img.src = "https://re-kin-commits.github.io/img.png"; 
-    ;
+    img.src = "img.png"; 
 
-    img.onload = function() {
-        ctx.drawImage(img, 0, 0, 300, 650);
-    }
+    img.onload = function () {
+        const scaleFactor = 0.20;
+        const newWidth = img.width * scaleFactor;
+        const newHeight = img.height * scaleFactor;
 
 
-    camera();
+        canvas.width = newWidth;
+        canvas.height = newHeight;
 
+        ctx.drawImage(img, 0, 0, newWidth, newHeight);
+    };
 });

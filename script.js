@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const ctx = canvasResult.getContext("2d");
 
     const img = new Image();
-    img.src = img.src = "./Photo/img.png";  // Relative to the HTML file
+    img.src = img.src = "./img.png";  // Relative to the HTML file
     ;
 
     img.onload = function() {

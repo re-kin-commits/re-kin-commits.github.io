@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const ctx = canvasResult.getContext("2d");
 
     const img = new Image();
-    img.src = img.src = "https://github.com/re-kin-commits/re-kin-commits.github.io/blob/main/img.png"; 
+    img.src = img.src = "https://re-kin-commits.github.io/img.png"; 
     ;
 
     img.onload = function() {

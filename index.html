@@ -8,19 +8,23 @@
     <body>
         <div class="title">
             <h1>Photo Booth</h1>
-            <h4>For my boiboi :3</h4>
+        </div>
+        <div class="holder">
+            <div class="camera">
+                <video id="video" autoplay class="video"></video>
+            <div>
+            <div>
+                <button onclick="start()">Capture</button>
+            <canvas id="resultCanvas">
+                <img id="template" src="img.png">
+                <canvas id="canvasOne"></canvas>
+                <canvas id="canvasTwo"></canvas>
+                <canvas id="canvasThree"></canvas>
+    
+            </div>
         </div>
 
-        <div class="camera">
-            <video id="video" autoplay class="video"></video>
-            <button onclick="start()">Capture</button>
-            <canvas id="canvas"></canvas>
 
-        </div>
-
-        <canvas id="gallery" width="300" height="650"></canvas>
-            dwd
-            </canvas>
         <script src="script.js"></script>
     </body>
 </html>

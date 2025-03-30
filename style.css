@@ -6,6 +6,12 @@ body {
     text-align: center;
     margin: auto;
     background-color: bisque;
+    margin: 0;
+    padding: 10px;
+}
+
+.title h1, .title h4 {
+    margin: 0; /* Remove extra space inside title */
 }
 
 .camera {
@@ -13,6 +19,7 @@ body {
     flex-direction: column; /* Stack items vertically */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+    margin-top: 0;
 }
 
 .video {
@@ -22,26 +29,22 @@ body {
 }
 
 button {
-    margin-top: 10px;
-    width: 48%;
+    margin-top: 0px;
+    width: 100vh;
     height: 10%;
     border-radius: 10px;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
-.overlay {
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    top: 46%;
-    left: 46%;
-    text-align: center;
-    font-size: xx-large;
+#resultCanvas {
+    position: relative;
+    top: -500px;
+    right: -650px;
 }
 
-.gallery {
-    height: 650px;
-    width: 300px;
-}
 
 
 
